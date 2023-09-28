@@ -1,0 +1,37 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  .one,
+  .two,
+  .tree {
+    width: 1em;
+    background-color: orange;
+    opacity: 50%;
+  }
+  .one {
+    animation: show 1s ease-in-out infinite 0.25s;
+  }
+  .two {
+    animation: show 1s ease-in-out infinite 0.5s;
+  }
+  .tree {
+    animation: show 1s ease-in-out infinite 0.75s;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    height: 2em;
+  }
+  50% {
+    height: 5em;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 2em;
+  }
+}
