@@ -1,11 +1,1 @@
-import React from 'react';
-
-const AboutPage = () => {
-  return (
-    <div>
-      About page
-    </div>
-  );
-};
-
-export default AboutPage;
+export {AboutPageAsync as AboutPage} from './ui/index.async'
