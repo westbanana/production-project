@@ -1,8 +1,6 @@
 import React, {Suspense} from 'react';
 import Loader from "components/Loader";
 import {Route, Routes} from "react-router-dom";
-import AboutPage from "pages/AboutPage/ui";
-import MainPage from "pages/MainPage/ui";
 import {routeConfig} from "shared/config/routeConfig/routeConfig";
 
 const AppRouter = () => {
@@ -13,7 +11,11 @@ const AppRouter = () => {
           <Route
             key={path}
             path={path}
-            element={element}
+            element={(
+              <div className="page-wrapper">
+                {element}
+              </div>
+            )}
           />
         ))}
       </Routes>
