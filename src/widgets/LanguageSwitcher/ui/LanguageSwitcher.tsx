@@ -13,7 +13,6 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
         i18n.changeLanguage(i18n.language === 'ua' ? 'en' : 'ua')
             .then(null);
     };
-
     return (
         <Button
             className={classNames('', {}, [className])}

@@ -6,14 +6,14 @@ import { classNames } from 'shared/lib/classNames';
 import { AppRouter } from 'app/providers/router';
 import { NavBar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import Loader from 'components/Loader';
+import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
 
 const App = () => {
     const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<PageLoader />}>
                 <NavBar />
                 <div className="content-page">
                     <Sidebar />
