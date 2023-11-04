@@ -8,6 +8,9 @@
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+    .switchers {
+        flex-direction: column;
+    }
 }
 
 .switchers {
