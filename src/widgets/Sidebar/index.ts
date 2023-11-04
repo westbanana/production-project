@@ -1,6 +1,5 @@
-import { Sidebar } from './ui/SIdebar/Sidebar';
+import { Sidebar } from './ui/Sidebar/Sidebar';
 
-// test commit
 export {
     Sidebar,
 };
