@@ -16,5 +16,8 @@
   "Збільшити": "Increase",
   "Зменшити": "Decrease",
   "Введіть username": "Enter username",
-  "Введіть пароль": "Enter password"
+  "Введіть пароль": "Enter password",
+  "Форма авторизації": "Auth form",
+  "Невірний логін або пароль": "Invalid login or password",
+  "Вийти": "Вийти"
 }
