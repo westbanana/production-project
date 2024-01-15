@@ -19,5 +19,14 @@
       "password": "admin"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Illia",
+    "lastname": "Lysenko",
+    "age": 23,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Kryvyi Rih",
+    "username": "chokeup",
+    "avatar": "https://media.distractify.com/brand-img/3JWAIT4PU/0x0/jamale-meme-tiktok-1666816782403.jpg"
+  }
 }
