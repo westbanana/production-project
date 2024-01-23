@@ -5,13 +5,13 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
-import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
+
     return (
         <div className={classNames('app', {}, [])}>
             <Suspense fallback="">
