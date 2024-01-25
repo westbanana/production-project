@@ -1,6 +1,5 @@
 import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 
 describe('getLoginPassword.ts', () => {
     test('should return password', () => {

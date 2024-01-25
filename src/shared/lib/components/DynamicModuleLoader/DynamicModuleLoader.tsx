@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
@@ -7,8 +7,6 @@ import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 export type ReducerList = {
   [name in StateSchemaKey]?: Reducer
 }
-
-export type ReducerListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
   reducers: ReducerList
@@ -25,18 +23,19 @@ export const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([reducerKey, reducer]:ReducerListEntry) => {
-            store.reducerManager.add(reducerKey, reducer);
+        Object.entries(reducers).forEach(([reducerKey, reducer]) => {
+            store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
             dispatch({ type: `@INIT ${reducerKey} reducer` });
         });
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([reducerKey, reducer]:ReducerListEntry) => {
-                    store.reducerManager.remove(reducerKey);
+                Object.entries(reducers).forEach(([reducerKey, reducer]) => {
+                    store.reducerManager.remove(reducerKey as StateSchemaKey);
                     dispatch({ type: `@DESTROY ${reducerKey} reducer` });
                 });
             }
         };
+    // eslint-disable-next-line
     }, []);
 
     return (

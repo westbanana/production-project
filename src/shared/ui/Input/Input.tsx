@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames';
 import React, {
     InputHTMLAttributes,
-    memo,
+    memo, MutableRefObject,
     useEffect,
     useRef,
     useState,
@@ -28,7 +28,7 @@ export const Input = memo((props: InputProps) => {
     } = props;
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef() as MutableRefObject<HTMLInputElement>;
 
     useEffect(() => {
         if (autoFocus) {
